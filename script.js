@@ -13,19 +13,9 @@ function randomHole(holes) {
   lastHole = hole;
   return hole;
 }
+let timeUp = false;
 
-function peep() {
-    const time = randomTime(200, 1000);
-    const hole = randomHole(holes);
-    hole.classList.add('up');
-    setTimeout(() => {
-      hole.classList.remove('up');
-      if (!timeup) peep();
-    }, time);
-  }
-
-  let timeUp = false;
-function startGame() {
+  function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;
@@ -79,3 +69,13 @@ function whack(e) {
     scoreBoard.textContent = score;
 }
 moles.forEach(mole => mole.addEventListener('click', whack));
+
+function peep() {
+    const time = randomTime(200, 1000);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+    setTimeout(() => {
+      hole.classList.remove('up');
+      if (!timeup) peep();
+    }, time);
+}

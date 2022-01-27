@@ -69,13 +69,3 @@ function whack(e) {
     scoreBoard.textContent = score;
 }
 moles.forEach(mole => mole.addEventListener('click', whack));
-
-function peep() {
-    const time = randomTime(200, 1000);
-    const hole = randomHole(holes);
-    hole.classList.add('up');
-    setTimeout(() => {
-      hole.classList.remove('up');
-      if (!timeup) peep();
-    }, time);
-}

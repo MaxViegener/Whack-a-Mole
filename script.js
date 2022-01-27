@@ -15,7 +15,7 @@ function randomHole(holes) {
 }
 let timeUp = false;
 
-  function startGame() {
+function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;

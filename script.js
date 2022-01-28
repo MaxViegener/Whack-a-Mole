@@ -56,16 +56,5 @@ function whack(e) {
         if (!timeUp) peep();
     }, time);
 }
-function startGame() {
-    scoreBoard.textContent = 0;
-    timeUp = false;
-    score = 0;peep();
-    setTimeout(() => timeUp = true, 10000)
-}
-function whack(e) {
-    if(!e.isTrusted) return;
-    score++;
-    this.parentNode.classList.remove('up');
-    scoreBoard.textContent = score;
-}
+
 moles.forEach(mole => mole.addEventListener('click', whack));

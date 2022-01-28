@@ -58,3 +58,7 @@ function whack(e) {
 }
 
 moles.forEach(mole => mole.addEventListener('click', whack));
+
+function Test(){
+  alert("Test")
+}
